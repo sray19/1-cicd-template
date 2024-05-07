@@ -29,10 +29,12 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+                 <!-- Added below Configuration -->
                  <configuration>
                     <classifier>mule-application</classifier>
                     <cloudHubDeployment>
-                      <uri>${deployment.url}</uri>
+                      <!-- <uri>${deployment.url}</uri>  -->
+                      <uri>https://anypoint.mulesoft.com</uri>
                       <muleVersion>${app.runtime}</muleVersion>
                       <username>${ap.username}</username>
                       <password>${ap.password}</password>
@@ -68,12 +70,20 @@
 	</dependencies>
 
 	<repositories>
-		<repository>
+		 <!-- Added below Repository v2 -->
+        <repository>
+            <id>anypoint-exchange-v2</id>
+            <name>Anypoint Exchange</name>
+            <url>https://maven.anypoint.mulesoft.com/api/v2/maven</url>
+            <layout>default</layout>
+        </repository>
+        <repository>
 			<id>anypoint-exchange-v3</id>
 			<name>Anypoint Exchange</name>
 			<url>https://maven.anypoint.mulesoft.com/api/v3/maven</url>
 			<layout>default</layout>
 		</repository>
+        
 		<repository>
 			<id>mulesoft-releases</id>
 			<name>MuleSoft Releases Repository</name>
@@ -83,7 +93,20 @@
 	</repositories>
 
 	<pluginRepositories>
-		<pluginRepository>
+		 <!-- Added below PluginRepository -->
+        <pluginRepository>
+          <id>mule-enterprise</id>
+          <name>MuleSoft Enterprise Repository</name>
+          <layout>default</layout>
+          <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+        <pluginRepository>
 			<id>mulesoft-releases</id>
 			<name>MuleSoft Releases Repository</name>
 			<layout>default</layout>
