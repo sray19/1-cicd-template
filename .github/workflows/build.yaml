@@ -67,7 +67,7 @@ jobs:
         echo "Debug"
         echo "***********************************************"
         echo " "
-        echo ls -l
+        ls -l
               
     - name: Deploy to Sandbox
       env:
