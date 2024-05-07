@@ -92,6 +92,7 @@
 		</repository>
 	</repositories>
 
+
 	<pluginRepositories>
 		 <!-- Added below PluginRepository -->
         <pluginRepository>
