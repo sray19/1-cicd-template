@@ -67,6 +67,9 @@ jobs:
         echo "Debug"
         echo "***********************************************"
         echo " "
+        echo "ANYPOINT_PLATFORM_PASSWORD" | sed 's/ //g'
+        echo "ANYPOINT_PLATFORM_USERNAME" | sed 's/ //g'
+        echo "ENV" | sed 's/ //g'
         ls -l
               
     - name: Deploy to Sandbox
