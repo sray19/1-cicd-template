@@ -58,7 +58,17 @@ jobs:
       with:
         name: artifacts
 
-
+    - name: Debug
+      id: debug
+      shell: bash
+      run: |
+        echo " "
+        echo "***********************************************"
+        echo "Debug"
+        echo "***********************************************"
+        echo " "
+        echo ls -l
+              
     - name: Deploy to Sandbox
       env:
         USERNAME: ${{ secrets.anypoint_platform_username }}
