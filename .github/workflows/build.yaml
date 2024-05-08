@@ -84,6 +84,6 @@ jobs:
          -Dmule.artifact=$artifactName \
          -Dap.username="$USERNAME" \
          -Dap.password="$PASSWORD" \
-         -Denv="ENV"
+         -Denv="ENV" -X
 
 
