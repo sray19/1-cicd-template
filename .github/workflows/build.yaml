@@ -77,7 +77,7 @@ jobs:
       env:
         USERNAME: ${{secrets.ANYPOINT_PLATFORM_PASSWORD}}
         PASSWORD: ${{secrets.ANYPOINT_PLATFORM_USERNAME}}
-        ENV: dev
+        ENV: ${{secrets.ENV}}
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn clean deploy -DmuleDeploy \
