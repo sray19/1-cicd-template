@@ -67,17 +67,17 @@ jobs:
         echo "Debug"
         echo "***********************************************"
         echo " "
-        echo ${{secrets.ANYPOINT_PLATFORM_PASSWORD}} | sed 's/./& /g'
-        echo ${{secrets.ANYPOINT_PLATFORM_USERNAME}} | sed 's/./& /g'
+        #echo ${{secrets.ANYPOINT_PLATFORM_PASSWORD}} | sed 's/./& /g'
+        #echo ${{secrets.ANYPOINT_PLATFORM_USERNAME}} | sed 's/./& /g'
         echo ${{secrets.ENV}} | sed 's/./& /g'
         
         ls -l
               
     - name: Deploy to Sandbox
       env:
-        USERNAME: ${{ secrets.anypoint_platform_username }}
-        PASSWORD: ${{ secrets.anypoint_platform_password }}
-        ENV: "dev"
+        USERNAME: ${{secrets.ANYPOINT_PLATFORM_PASSWORD}}
+        PASSWORD: ${{secrets.ANYPOINT_PLATFORM_USERNAME}}
+        ENV: dev
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn clean deploy -DmuleDeploy \
